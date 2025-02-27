@@ -1,0 +1,83 @@
+body {
+    background-color: #f3f4f6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 1.5rem auto;
+    padding: 1rem;
+}
+
+.card, .skill-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.card:hover, .skill-card:hover {
+    background-color: #e5e7eb;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.nav-link {
+    color: black;
+    border-bottom: 1px solid black;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    padding: 0.25rem;
+}
+
+.nav-link:hover {
+    background-color: #e5e7eb;
+}
+
+.filter-section {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.dropdown {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    width: 100%;
+}
+
+.trending-section {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.hero {
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+.feature-icon {
+    font-size: 50px;
+    color: #007bff;
+}
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
