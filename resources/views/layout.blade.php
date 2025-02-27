@@ -13,48 +13,61 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
         <div class="container">
-            <!-- Brand Logo -->
             <a class="navbar-brand" href="{{ route('dashboard') }}">
-                <img src="{{ asset('logo.jpeg') }}" alt="AnalyZis Logo" height="100">
+                <img src="{{ asset('logo.jpeg') }}" alt="AnalyZis Logo" height="50  ">
             </a>
 
-            <!-- Toggler for Mobile View -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Navbar Items -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark {{ request()->routeIs('dashboard') ? 'fw-bold' : '' }}"
-                            href="{{ route('dashboard') }}">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark {{ request()->is('tren-skill-role') ? 'fw-bold' : '' }}"
-                            href="{{ url('tren-skill-role') }}">Tren Keterampilan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Rekomendasi Pelatihan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Layanan Perusahaan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Komunitas</a>
-                    </li>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="#">Tren Keterampilan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Rekomendasi Pelatihan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Layanan Perusahaan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Komunitas</a></li>
                 </ul>
-            </div>
 
-            <!-- Login/Register Button -->
-            <div class="d-flex">
-                <a class="btn btn-outline-primary px-4" href="#">Login/Register</a>
+                <div class="d-flex align-items-center gap-3">
+                    <!-- UNTUK NOTIFIKASI -->
+                    <div class="position-relative me-3">
+                        <button class="btn btn-light p-0 border-0" id="notifButton">
+                            <i class="fas fa-bell text-primary fa-lg"></i>
+                        </button>
+                        <div class="position-absolute bg-white shadow p-3 rounded" id="notifBox" style="display: none; width: 250px; left: 50%; transform: translateX(-50%); top: 50px;">
+                            <p class="mb-2 fw-bold text-center">Notifikasi</p>
+                            <ul class="list-unstyled mb-0">
+                                <li class="border-bottom pb-2 mb-2"><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Javascript</a></li>
+                                <li class="border-bottom pb-2 mb-2"><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Node JS</a></li>
+                                <li><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Springboot</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="btn btn-outline-primary px-4" href="#">Login/Register</a>
+                </div>
             </div>
         </div>
     </nav>
+
+
+    <script>
+        document.getElementById('notifButton').addEventListener('click', function() {
+            var notifBox = document.getElementById('notifBox');
+            notifBox.style.display = notifBox.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', function(event) {
+            var notifButton = document.getElementById('notifButton');
+            var notifBox = document.getElementById('notifBox');
+            if (!notifButton.contains(event.target) && !notifBox.contains(event.target)) {
+                notifBox.style.display = 'none';
+            }
+        });
+    </script>
 
 
 
@@ -72,6 +85,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 
 </body>
 
