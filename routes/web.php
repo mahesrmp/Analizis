@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/tren-skill-role', [TrenSkillRoleController::class, 'index'])->name('tren_skill_role');
+Route::get('/skill/{id}', [TrenSkillRoleController::class, 'show'])->name('skill.detail');
 
 Route::get('/skills/{id}', function ($id) {
     return "Detail skill dengan ID: " . $id;
