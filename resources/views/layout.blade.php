@@ -44,6 +44,7 @@
                                 <li class="border-bottom pb-2 mb-2"><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Javascript</a></li>
                                 <li class="border-bottom pb-2 mb-2"><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Node JS</a></li>
                                 <li><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Springboot</a></li>
+                                <li><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Cyber Security</a></li>
                             </ul>
                         </div>
                     </div>
