@@ -25,11 +25,12 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold" href="#">Tren Keterampilan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('tren_skill_role') }}">Tren Keterampilan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Rekomendasi Pelatihan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Layanan Perusahaan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Komunitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('promotion') }}">Promosi</a></li>
                 </ul>
 
                 <div class="d-flex align-items-center gap-3">
