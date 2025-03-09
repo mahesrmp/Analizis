@@ -34,13 +34,14 @@
                             href="{{ url('tren-skill-role') }}">Tren Keterampilan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Rekomendasi Pelatihan</a>
+                        <a class="nav-link text-dark {{ request()->is('course') ? 'fw-bold' : '' }}"
+                            href="{{ route('course.index') }}">Pelatihan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Forum Diskusi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">Layanan Perusahaan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Komunitas</a>
                     </li>
                 </ul>
             </div>

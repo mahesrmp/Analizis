@@ -32,7 +32,7 @@
         </div>
 
         <div class="mt-4">
-            <h3 class="section-title">💼 Rekomendasi Kursus</h3>
+            <h3 class="section-title">💼 Rekomendasi Lowongan Pekerjaan</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
                 @foreach ($skill['courses'] as $course)
                     <a href="#" class="block text-black no-underline">

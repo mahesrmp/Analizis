@@ -24,7 +24,7 @@
                         <option>2021</option>
                     </select>
                 </div>
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <select class="form-select">
                         <option selected>Pilih Kategori</option>
                         <option>Backend Development</option>
@@ -33,7 +33,7 @@
                         <option>Cybersecurity</option>
                         <option>DevOps</option>
                     </select>
-                </div>
+                </div> --}}
                 <div class="col-md-4">
                     <button class="btn btn-primary w-100">Cari</button>
                 </div>

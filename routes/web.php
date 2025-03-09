@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TrenSkillRoleController;
 
@@ -27,3 +28,5 @@ Route::get('/skill/{id}', [TrenSkillRoleController::class, 'show'])->name('skill
 Route::get('/skills/{id}', function ($id) {
     return "Detail skill dengan ID: " . $id;
 })->name('skills.details');
+
+Route::get('/course', [CourseController::class, 'index'])->name('course.index');
