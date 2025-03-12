@@ -12,24 +12,37 @@
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ route('dashboard') }}">
                 <img src="{{ asset('logo.jpeg') }}" alt="AnalyZis Logo" height="50  ">
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold" href="#">Tren Keterampilan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Rekomendasi Pelatihan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Layanan Perusahaan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Komunitas</a></li>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark {{ request()->routeIs('dashboard') ? 'fw-bold' : '' }}"
+                            href="{{ route('dashboard') }}">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark {{ request()->is('tren-skill-role') ? 'fw-bold' : '' }}"
+                            href="{{ url('tren-skill-role') }}">Tren Keterampilan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark {{ request()->is('course') ? 'fw-bold' : '' }}"
+                            href="{{ route('course.index') }}">Pelatihan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Forum Diskusi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">Layanan Perusahaan</a>
+                    </li>
                 </ul>
 
                 <div class="d-flex align-items-center gap-3">
@@ -74,7 +87,6 @@
 
     @yield('content')
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 AnalyZis. Semua Hak Dilindungi.</p>
@@ -84,7 +96,6 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 
