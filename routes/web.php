@@ -30,3 +30,6 @@ Route::get('/skills/{id}', function ($id) {
 })->name('skills.details');
 
 Route::get('/course', [CourseController::class, 'index'])->name('course.index');
+Route::get('/promotion', function () {
+    return view('promotion');
+})->name('promotion');

@@ -1,0 +1,48 @@
+/* Custom styles for promotion page */
+.hero {
+    background-color: #4A8DF2;
+    padding: 60px 0;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.promo-card .card,
+.offer-card .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.promo-card .card:hover,
+.offer-card .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.filter-section {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.special-offers-section {
+    background-color: #4373BE;
+    padding: 40px 0;
+    color: white;
+    margin-top: 50px;
+}
+
+.special-offers-section .card {
+    background-color: #F9F9F9;
+}
+
+.footer-section {
+    background-color: #F5F5F5;
+    padding: 20px 0;
+    margin-top: 50px;
+}
