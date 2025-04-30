@@ -8,29 +8,55 @@ class TrenSkillRoleController extends Controller
 {
     public function index()
     {
-        $skills = [
-            (object) ['name' => 'Python', 'growth' => 15],
-            (object) ['name' => 'React.js', 'growth' => 12],
-            (object) ['name' => 'Cloud Computing', 'growth' => 10],
-            (object) ['name' => 'Cybersecurity', 'growth' => 9],
-            (object) ['name' => 'DevOps', 'growth' => 8],
+        $roles = [
+            (object) [
+                'id' => 1,
+                'name' => 'Backend Developer',
+                'demand' => 1200,
+                'skills' => ['Python', 'Cloud Computing']
+            ],
+            (object) [
+                'id' => 2,
+                'name' => 'Frontend Developer',
+                'demand' => 1000,
+                'skills' => ['React.js', 'JavaScript']
+            ],
+            (object) [
+                'id' => 3,
+                'name' => 'Data Scientist',
+                'demand' => 850,
+                'skills' => ['Python', 'Data Analysis']
+            ],
+            (object) [
+                'id' => 4,
+                'name' => 'Cybersecurity Analyst',
+                'demand' => 700,
+                'skills' => ['Cybersecurity', 'Networking']
+            ],
+            (object) [
+                'id' => 5,
+                'name' => 'DevOps Engineer',
+                'demand' => 650,
+                'skills' => ['DevOps', 'Cloud Computing']
+            ],
         ];
 
-        $roles = [
-            (object) ['name' => 'Backend Developer', 'demand' => 1200],
-            (object) ['name' => 'Frontend Developer', 'demand' => 1000],
-            (object) ['name' => 'Data Scientist', 'demand' => 850],
-            (object) ['name' => 'Cybersecurity Analyst', 'demand' => 700],
-            (object) ['name' => 'DevOps Engineer', 'demand' => 650],
-        ];
+        $skills = collect([
+            ['id' => 1, 'name' => 'Python', 'growth' => 15],
+            ['id' => 2, 'name' => 'React.js', 'growth' => 12],
+            ['id' => 3, 'name' => 'Cloud Computing', 'growth' => 10],
+            ['id' => 4, 'name' => 'Cybersecurity', 'growth' => 9],
+            ['id' => 5, 'name' => 'DevOps', 'growth' => 8],
+            ['id' => 6, 'name' => 'JavaScript', 'growth' => 7],
+            ['id' => 7, 'name' => 'Data Analysis', 'growth' => 6],
+        ])->map(fn($skill) => (object) $skill);
 
         return view('trenskillrole', compact('skills', 'roles'));
     }
-
     public function show($id)
     {
         $skills = [
-            0 => [
+            1 => [
                 'name' => 'Python',
                 'growth' => 15,
                 'description' => 'Python adalah bahasa pemrograman serbaguna yang banyak digunakan dalam pengembangan web, data science, kecerdasan buatan, dan otomatisasi.',
@@ -46,7 +72,7 @@ class TrenSkillRoleController extends Controller
                     'Backend Engineer - Startup XYZ'
                 ]
             ],
-            1 => [
+            2 => [
                 'name' => 'React.js',
                 'growth' => 12,
                 'description' => 'React.js adalah library JavaScript populer untuk membangun antarmuka pengguna yang interaktif dan dinamis.',
@@ -61,8 +87,8 @@ class TrenSkillRoleController extends Controller
             ]
         ];
 
-        if (!isset($skills[$id])) {
-            return redirect()->back()->with('error', 'Skill tidak ditemukan!');
+        if (!array_key_exists($id, $skills)) {
+            return redirect()->route('tren_skill_role')->with('error', 'Skill tidak ditemukan!');
         }
 
         $trendData = [

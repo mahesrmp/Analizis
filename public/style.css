@@ -68,7 +68,7 @@ body {
     background: linear-gradient(to right, #007bff, #00c6ff);
     color: white;
     text-align: center;
-    padding: 80px 20px;
+    padding: 40px 20px;
 }
 .feature-icon {
     font-size: 50px;
@@ -79,5 +79,24 @@ body {
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+.herocs {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 350px; /* Sesuaikan dengan tinggi yang diinginkan */
+    object-fit: cover; /* Agar gambar tidak terdistorsi */
+}
+
+.carousel-inner {
+    width: 100%;
 }
 

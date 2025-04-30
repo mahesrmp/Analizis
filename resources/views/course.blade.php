@@ -10,8 +10,6 @@
             <div class="col-lg-8">
                 <h1 class="fw-bold">Daftar Course Populer</h1>
                 <p class="lead">Tingkatkan daya saing Anda dengan rekomendasi pelatihan berbasis data.</p>
-                {{-- <a href="#" class="btn btn-light btn-lg">Mulai Sekarang</a>
-                <a href="#" class="btn btn-outline-light btn-lg ms-2">Eksplorasi Tren</a> --}}
             </div>
         </div>
     </div>

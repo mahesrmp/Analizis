@@ -14,6 +14,11 @@ class DashboardController extends Controller
             ['image' => 'https://via.placeholder.com/150', 'quote' => 'Data dari AnalyZis membantu kami merancang pelatihan yang relevan!', 'name' => 'Andi', 'role' => 'HR Manager'],
         ];
 
-        return view('dashboard', compact('testimonials'));
+        $events = [
+            ['title' => 'WebinarClass: Data Science 101', 'date' => '5 April 2025', 'image' => 'webinarDS.png'],
+            ['title' => 'WebinarClass: Cybersecurity Trends', 'date' => '15 Mei 2025', 'image' => 'webinarCS.png'],
+        ];
+
+        return view('dashboard', compact('testimonials', 'events'));
     }
 }

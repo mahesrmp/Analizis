@@ -1,0 +1,289 @@
+/* public/css/profile-style.css */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #3273dc;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 24px;
+    margin-right: 8px;
+}
+
+.navbar-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.navbar-menu a {
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.navbar-menu a:hover {
+    color: #3273dc;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Main content styles */
+.main-content {
+    padding: 24px 0;
+}
+
+.profile-container {
+    display: flex;
+    gap: 24px;
+}
+
+.profile-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    padding: 20px;
+}
+
+.data-pribadi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.data-pribadi h3 {
+    align-self: flex-start;
+    margin-bottom: 16px;
+    /* color: #555; */
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.profile-name {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.view-profile-link {
+    font-size: 14px;
+    color: #3273dc;
+    margin-bottom: 32px;
+}
+
+.profile-additional-info {
+    border-top: 1px solid #e1e4e8;
+    padding-top: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.profile-additional-info h3 {
+    margin-bottom: 12px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.info-item i {
+    width: 16px;
+    margin-right: 12px;
+    color: #6c757d;
+}
+
+.add-info-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #3273dc;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.add-info-button i {
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+/* Activities container styles */
+.activities-container {
+    flex: 1;
+}
+
+.learning-activities, .other-activities {
+    margin-bottom: 24px;
+}
+
+.learning-activities h3, .other-activities h3 {
+    font-size: 16px;
+    font-weight: 600;
+    /* color: #555; */
+    margin-bottom: 16px;
+}
+
+.course-card, .webinar-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.course-card h4, .webinar-card h4 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.course-item, .webinar-item {
+    display: flex;
+    border-top: 1px solid #e1e4e8;
+    padding-top: 16px;
+}
+
+.course-logo, .webinar-logo {
+    background-color: #fff;
+    color: #3273dc;
+    padding: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 16px;
+}
+
+.course-details h5, .webinar-details h5 {
+    color: #3273dc;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.course-status, .webinar-status {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.course-date {
+    color: #888;
+    font-size: 12px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #e8f0fe;
+    color: #666;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+    
+    .profile-card {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    
+    .navbar-menu {
+        display: none;
+    }
+}
+
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* jarak antara avatar dan teks */
+    font-weight: bold;
+}
