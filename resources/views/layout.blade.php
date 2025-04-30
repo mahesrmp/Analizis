@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+
 </head>
 
 <body>
@@ -15,7 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ route('dashboard') }}">
-                <img src="{{ asset('logo.jpeg') }}" alt="AnalyZis Logo" height="100">
+                <img src="{{ asset('logo.jpeg') }}" alt="AnalyZis Logo" height="50  ">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -49,35 +51,34 @@
                         <a class="nav-link text-dark" href="#">Layanan Perusahaan</a>
                     </li> --}}
                 </ul>
-            </div>
 
-            <div class="d-flex">
                 <div class="d-flex align-items-center gap-3">
                     <!-- UNTUK NOTIFIKASI -->
                     <div class="position-relative me-3">
                         <button class="btn btn-light p-0 border-0" id="notifButton">
                             <i class="fas fa-bell text-primary fa-lg"></i>
                         </button>
-                        <div class="position-absolute bg-white shadow p-3 rounded" id="notifBox"
-                            style="display: none; width: 250px; left: 50%; transform: translateX(-50%); top: 50px;">
+                        <div class="position-absolute bg-white shadow p-3 rounded" id="notifBox" style="display: none; width: 250px; left: 50%; transform: translateX(-50%); top: 50px;">
                             <p class="mb-2 fw-bold text-center">Notifikasi</p>
                             <ul class="list-unstyled mb-0">
-                                <li class="border-bottom pb-2 mb-2"><a href="#"
-                                        class="d-block text-dark text-decoration-none">Anda baru saja membeli Course
-                                        Javascript</a></li>
-                                <li class="border-bottom pb-2 mb-2"><a href="#"
-                                        class="d-block text-dark text-decoration-none">Anda baru saja membeli Course
-                                        Node JS</a></li>
-                                <li><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja
-                                        membeli Course Springboot</a></li>
+                                <li class="border-bottom pb-2 mb-2"><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Javascript</a></li>
+                                <li class="border-bottom pb-2 mb-2"><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Node JS</a></li>
+                                <li><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Springboot</a></li>
+                                <li><a href="#" class="d-block text-dark text-decoration-none">Anda baru saja membeli Course Cyber Security</a></li>
                             </ul>
                         </div>
                     </div>
-                    <a class="btn btn-outline-primary px-4" href="{{ route('login') }}">Login</a>
+                    <a class="btn btn-outline-primary px-4" href="#">Login/Register</a>
                 </div>
             </div>
         </div>
     </nav>
+
+    <script>
+        document.getElementById('notifButton').addEventListener('click', function() {
+            var notifBox = document.getElementById('notifBox');
+            notifBox.style.display = notifBox.style.display === 'block' ? 'none' : 'block';
+        });
 
     <script>
         document.getElementById('notifButton').addEventListener('click', function() {
@@ -93,6 +94,8 @@
             }
         });
     </script>
+
+
 
     @yield('content')
 

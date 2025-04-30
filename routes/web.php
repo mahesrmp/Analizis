@@ -39,6 +39,6 @@ Route::get('/skills/{id}', function ($id) {
 })->name('skills.details');
 
 Route::get('/course', [CourseController::class, 'index'])->name('course.index');
-Route::get('/event', [EventController::class, 'index'])->name('event.index');
-Route::get('/event/{id}', [EventController::class, 'show'])->name('event.detail');
-Route::get('/forum', [ForumController::class, 'forum'])->name('forum.index');
+Route::get('/promotion', function () {
+    return view('promotion');
+})->name('promotion');
