@@ -53,6 +53,7 @@ class TrenSkillRoleController extends Controller
 
         return view('trenskillrole', compact('skills', 'roles'));
     }
+    
     public function show($id)
     {
         $skills = [

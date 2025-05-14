@@ -32,13 +32,15 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'processRegister'])->name('register.process');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/tren-skill-role', [TrenSkillRoleController::class, 'index'])->name('tren_skill_role');
+Route::get('/course', [CourseController::class, 'index'])->name('course');
+Route::get('/forum-diskusi', [CourseController::class, 'index'])->name('forum-diskusi');
+Route::get('/tentang-analyzis', [CourseController::class, 'index'])->name('tentang-analyzis');
 Route::get('/skill/{id}', [TrenSkillRoleController::class, 'show'])->name('tren-skill-role.detail');
 
 Route::get('/skills/{id}', function ($id) {
     return "Detail skill dengan ID: " . $id;
 })->name('skills.details');
 
-Route::get('/course', [CourseController::class, 'index'])->name('course.index');
 Route::get('/promotion', function () {
     return view('promotion');
 })->name('promotion');

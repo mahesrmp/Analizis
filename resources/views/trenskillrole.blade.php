@@ -1,84 +1,251 @@
 @extends('layout')
 
-@section('title', 'Tren Keterampilan & Role - AnalyZis')
+@section('title', 'Tren Skill & Role')
 
 @section('content')
+    <img src="{{ asset('images/navskillrole.png') }}" alt="" style="width: 100%; height: auto;">
 
-    <section class="hero">
-        <div class="container text-center">
-            <h1>Tren Keterampilan & Role di Industri IT</h1>
-            <p>Temukan keterampilan yang paling diminati dan peran yang berkembang pesat di industri.</p>
-        </div>
-    </section>
-
-    <div class="container my-4">
-        <div class="card p-4">
-            <h4 class="mb-3">Filter Pencarian</h4>
-            <div class="row">
-                <div class="col-md-4">
-                    <select class="form-select">
-                        <option selected>Pilih Tahun</option>
-                        <option>2024</option>
-                        <option>2023</option>
-                        <option>2022</option>
-                        <option>2021</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <button class="btn btn-primary w-100">Cari</button>
+    <section class="search-section">
+        <div class="container">
+            <div class="search-card">
+                <h2>Fitur Pencarian</h2>
+                <div class="search-form">
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option>Semua Posisi</option>
+                            <option>Developer</option>
+                            <option>Data Scientist</option>
+                            <option>UI/UX Designer</option>
+                            <option>Cybersecurity Specialist</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option>Pilih Tahun</option>
+                            <option>2025</option>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                        </select>
+                    </div>
+                    <button class="search-button">Cari dan Temukan</button>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container">
-        <h2 class="text-center my-4">🚀 Peran IT yang Sedang Naik Daun</h2>
-        <div class="row">
-            @foreach ($roles as $role)
-                <div class="col-md-4">
-                    <div class="card p-3 text-center role-card mb-4" data-skills="{{ json_encode($role->skills) }}">
-                        <i class="fas fa-user-tie feature-icon"></i>
-                        <h5 class="mt-2">{{ $role->name }}</h5>
-                        <p class="text-muted">👥 {{ $role->demand }} lowongan tersedia</p>
-                    </div>
+    <section class="intro-section">
+        <div class="container">
+            <h2>Yuk, temukan tren skill terbaru dan siapkan karirmu dengan AnalyZis!</h2>
+
+            <div class="info-card">
+                <div class="info-text">
+                    <h3>Mengapa Harus Mengikuti Tren Skill di Industri?</h3>
+                    <p>Di era digital yang terus berkembang, keterampilan yang relevan menjadi kunci utama dalam membangun
+                        karier yang sukses. Dengan memahami tren skill di industri, Anda dapat menyesuaikan diri dengan
+                        kebutuhan pasar kerja, meningkatkan daya saing, dan membuka lebih banyak peluang karier.</p>
+                    <p><strong>AnalyZis</strong> hadir untuk membantu Anda mengidentifikasi keterampilan yang sedang
+                        diminati dan memberikan wawasan berbasis data agar Anda selalu selangkah lebih maju!</p>
                 </div>
-            @endforeach
-        </div>
-    </div>
-
-    <div class="container my-5">
-        <h2 class="text-center my-4">🔥 Keterampilan Paling Dicari</h2>
-        <div id="skills-container" class="row">
-            @foreach ($skills as $skill)
-                <div class="col-md-4 skill-card mb-4">
-                    <div class="card p-3 text-center">
-                        <a href="{{ route('tren-skill-role.detail', ['id' => $skill->id]) }}" class="block text-black no-underline">
-                            <h3 class="text-lg font-semibold">{{ $skill->name }}</h3>
-                            <p class="text-gray-600">📈 +{{ $skill->growth }}% peningkatan permintaan</p>
-                        </a>
-                    </div>
+                <div class="info-image">
+                    <img src="{{ asset('images/trenskill.png') }}" alt="Career Illustration">
                 </div>
-            @endforeach
+            </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const roleCards = document.querySelectorAll('.role-card');
-            const skillCards = document.querySelectorAll('.skill-card');
+    <section class="trending-jobs">
+        <div class="container">
+            <h2>Tren Keterampilan Populer</h2>
+            <p class="section-subtitle">Skill yang Sedang Tren di Industri Teknologi</p>
 
-            roleCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const skills = JSON.parse(this.getAttribute('data-skills'));
+            <div class="job-cards">
+                <div class="job-card">
+                    <div class="job-icon">
+                        <img src="{{ asset('images/cloud.png') }}" alt="Cloud Computing">
+                    </div>
+                    <h3>Cloud Computing</h3>
+                    <div class="job-stats">
+                        <div class="stat">
+                            <i class="fas fa-briefcase"></i>
+                            <span>5,200+ Lowongan</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>Skill: AWS, Google Cloud, Azure</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Rp 15-25 juta/bulan</span>
+                        </div>
+                    </div>
+                    <a href="#" class="job-link">Lihat Selengkapnya</a>
+                </div>
 
-                    // Sembunyikan semua keterampilan
-                    skillCards.forEach(skillCard => {
-                        const skillName = skillCard.querySelector('h3').innerText;
-                        skillCard.style.display = skills.includes(skillName) ? 'block' :
-                            'none';
-                    });
-                });
-            });
-        });
-    </script>
+                <div class="job-card">
+                    <div class="job-icon">
+                        <img src="{{ asset('images/data.png') }}" alt="Data Science">
+                    </div>
+                    <h3>Data Science</h3>
+                    <div class="job-stats">
+                        <div class="stat">
+                            <i class="fas fa-briefcase"></i>
+                            <span>6,800+ Lowongan</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>Skill: Python, SQL, TensorFlow</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Rp 18-30 juta/bulan</span>
+                        </div>
+                    </div>
+                    <a href="#" class="job-link">Lihat Selengkapnya</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-icon">
+                        <img src="{{ asset('images/cyber.png') }}" alt="Cybersecurity">
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <div class="job-stats">
+                        <div class="stat">
+                            <i class="fas fa-briefcase"></i>
+                            <span>4,500+ Lowongan</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>Skill: Ethical Hacking, SOC, Firewall</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Rp 20-35 juta/bulan</span>
+                        </div>
+                    </div>
+                    <a href="#" class="job-link">Lihat Selengkapnya</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-icon">
+                        <img src="{{ asset('images/uiux.png') }}" alt="UI/UX Design">
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <div class="job-stats">
+                        <div class="stat">
+                            <i class="fas fa-briefcase"></i>
+                            <span>3,800+ Lowongan</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>Skill: Figma, Adobe XD, Sketch</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Rp 12-20 juta/bulan</span>
+                        </div>
+                    </div>
+                    <a href="#" class="job-link">Lihat Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="trending-jobs">
+        <div class="container">
+            <h2>Tren Pekerjaan Populer</h2>
+            <p class="section-subtitle">Pekerjaan yang Sedang Tren di Industri Teknologi</p>
+
+            <div class="job-cards">
+                <div class="job-card">
+                    <div class="job-icon">
+                        <img src="{{ asset('images/frontend.png') }}" alt="Cloud Computing">
+                    </div>
+                    <h3>Front-end Development</h3>
+                    <div class="job-stats">
+                        <div class="stat">
+                            <i class="fas fa-briefcase"></i>
+                            <span>5,200+ Lowongan</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>Skill: AWS, Google Cloud, Azure</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Rp 15-25 juta/bulan</span>
+                        </div>
+                    </div>
+                    <a href="#" class="job-link">Lihat Selengkapnya</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-icon">
+                        <img src="{{ asset('images/dataanalys.png') }}" alt="Data Science">
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <div class="job-stats">
+                        <div class="stat">
+                            <i class="fas fa-briefcase"></i>
+                            <span>6,800+ Lowongan</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>Skill: Python, SQL, TensorFlow</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Rp 18-30 juta/bulan</span>
+                        </div>
+                    </div>
+                    <a href="#" class="job-link">Lihat Selengkapnya</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-icon">
+                        <img src="{{ asset('images/backend.png') }}" alt="Cybersecurity">
+                    </div>
+                    <h3>Back-end Development</h3>
+                    <div class="job-stats">
+                        <div class="stat">
+                            <i class="fas fa-briefcase"></i>
+                            <span>4,500+ Lowongan</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>Skill: Ethical Hacking, SOC, Firewall</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Rp 20-35 juta/bulan</span>
+                        </div>
+                    </div>
+                    <a href="#" class="job-link">Lihat Selengkapnya</a>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-icon">
+                        <img src="{{ asset('images/aiml.png') }}" alt="UI/UX Design">
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <div class="job-stats">
+                        <div class="stat">
+                            <i class="fas fa-briefcase"></i>
+                            <span>3,800+ Lowongan</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>Skill: Figma, Adobe XD, Sketch</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Rp 12-20 juta/bulan</span>
+                        </div>
+                    </div>
+                    <a href="#" class="job-link">Lihat Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

@@ -1,38 +1,6 @@
-{{-- resources/views/profile.blade.php --}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyz.is - Profile</title>
-    <link rel="stylesheet" href="{{ asset('css/profile-style.css') }}">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <header class="navbar">
-        <div class="container">
-            <div class="navbar-brand">
-                <img src="{{ asset('logo-1.png') }}" alt="Analyz.is Logo">
-            </div>
-            <nav class="navbar-menu">
-                <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Tren Skill & Role</a></li>
-                    <li><a href="#">Course Pelatihan</a></li>
-                    <li><a href="#">Forum Diskusi</a></li>
-                    <li><a href="#">Tentang Analyzis</a></li>
-                </ul>
-            </nav>
-            <div class="navbar-user">
-                <div class="user-avatar">
-                    <span>K</span>
-                </div>
-                <span><b>Peles</b></span>
-            </div>
-        </div>
-    </header>
+@extends('layout')
 
+@section('content')
     <main class="container main-content">
         <div class="profile-container">
             <div class="profile-card">
@@ -72,7 +40,7 @@
             <div class="activities-container">
                 <div class="learning-activities">
                     <h3><b>Aktivitas Belajar</b></h3>
-                    <div class="course-card">
+                    <div class="webinar-card">
                         <h4>Kursus</h4>
                         <div class="course-item">
                             <div class="course-logo">
@@ -105,11 +73,4 @@
             </div>
         </div>
     </main>
-
-    <footer>
-        <div class="container">
-            <p>© 2023 Analyz.is. Semua Hak Dilindungi | Kebijakan Privasi | Syarat & Ketentuan</p>
-        </div>
-    </footer>
-</body>
-</html>
+@endsection
