@@ -26,14 +26,30 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
 Route::post('/login', [AuthController::class, 'proseslogin'])->name('login.post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'processRegister'])->name('register.process');
+Route::get('/otp-verification', [AuthController::class, 'showOtpPage'])->name('otp.verify.page');
+Route::post('/otp-verification', [AuthController::class, 'verifyOtp'])->name('otp.verify');
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/tren-skill-role', [TrenSkillRoleController::class, 'index'])->name('tren_skill_role');
 Route::get('/course', [CourseController::class, 'index'])->name('course');
-Route::get('/forum-diskusi', [CourseController::class, 'index'])->name('forum-diskusi');
+
+Route::get('/forum-diskusi', [ForumController::class, 'index'])->name('forum.index');
+// Route::post('/forum', [ForumController::class, 'store'])->name('forum.store');
+Route::get('/forum/{id}', [ForumController::class, 'show'])->name('forum.show');
+// Route::post('/forum/{id}/reply', [ForumController::class, 'reply'])->name('forum.reply');
+
+
+Route::middleware('auth')->group(function () {
+    Route::post('/forum', [ForumController::class, 'store'])->name('forum.store');
+    Route::post('/forum/{id}/reply', [ForumController::class, 'reply'])->name('forum.reply');
+
+    Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
+});
+
 Route::get('/tentang-analyzis', [AboutController::class, 'aboutUs'])->name('tentang-analyzis');
 Route::get('/skill/{id}', [TrenSkillRoleController::class, 'show'])->name('tren-skill-role.detail');
 
