@@ -66,7 +66,7 @@
                 </div>
                 <div class="cta-content">
                     <h2>Jangan Ketinggalan! Pelajari Skill yang Sedang Tren & Raih Karier Impianmu.</h2>
-                    <a href="#" class="btn-primary">Lihat Tren Skill & Role Sekarang</a>
+                    <a href="{{ route('tren_skill_role') }}" class="btn-primary">Lihat Tren Skill & Role Sekarang</a>
                 </div>
             </div>
         </section>

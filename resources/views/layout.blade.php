@@ -27,7 +27,7 @@
 
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
 
     <header class="navbar">
         <div class="container">
@@ -83,13 +83,15 @@
         </div>
     </header>
 
-    <main>
+    <main class="flex-grow">
         @yield('content')
     </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2023 Analyz.is. Semua Hak Dilindungi | Kebijakan Privasi | Syarat & Ketentuan</p>
+    <footer class="py-4 mt-auto">
+        <div class="container mx-auto px-4">
+            <p class="text-center text-gray-600">
+                © 2023 Analyzis. Semua Hak Dilindungi | Kebijakan Privasi | Syarat & Ketentuan
+            </p>
         </div>
     </footer>
 
